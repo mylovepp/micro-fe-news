@@ -26,10 +26,10 @@ jobs:
       - name: Install dependencies
         run: yarn install --frozen-lockfile
 
-      - name: Create code-signing.pem
-        env:
-          CODE_SIGNING_KEY: ${{ secrets.CODE_SIGNING_KEY }}
-        run: echo "$CODE_SIGNING_KEY" > code-signing.pem
+      # - name: Create code-signing.pem
+      #   env:
+      #     CODE_SIGNING_KEY: ${{ secrets.CODE_SIGNING_KEY }}
+      #   run: echo "$CODE_SIGNING_KEY" > code-signing.pem
 
       - name: Run Android bundle script
         if: contains(github.ref, 'news-android@')
@@ -39,8 +39,8 @@ jobs:
         if: contains(github.ref, 'news-ios@')
         run: yarn bundle:ios
 
-      - name: Delete code-signing.pem
-        run: rm code-signing.pem
+      # - name: Delete code-signing.pem
+      #   run: rm code-signing.pem
 
       - name: Release
         uses: ncipollo/release-action@v1
