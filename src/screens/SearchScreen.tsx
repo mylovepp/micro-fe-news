@@ -1,12 +1,12 @@
-import React, {useCallback, useState} from 'react';
+import React, {useCallback} from 'react';
 import {StyleSheet, View} from 'react-native';
 import {MD3Colors, Searchbar} from 'react-native-paper';
 
 const SearchScreen = () => {
-  const [searchQuery, setSearchQuery] = useState('');
+  // const [searchQuery, setSearchQuery] = useState('');
 
   const onChangeSearch = useCallback(
-    (query: string) => setSearchQuery(query || ""),
+    (query: string) => {return null;},
     [],
   );
 
@@ -15,7 +15,7 @@ const SearchScreen = () => {
       <Searchbar
         placeholder="Search..."
         onChangeText={onChangeSearch}
-        value={searchQuery}
+        value=""
         iconColor={MD3Colors.primary50}
         style={styles.searchbar}
       />
