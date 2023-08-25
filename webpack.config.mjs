@@ -238,7 +238,7 @@ export default (env) => {
       new Repack.plugins.ModuleFederationPlugin({
         name: 'news',
         exposes: {
-          './App': './src/navigation/MainNavigator',
+          './App': './src/App',
         },
         shared: {
           react: {
