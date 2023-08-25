@@ -43,7 +43,7 @@ jobs:
       #   run: rm code-signing.pem
 
       - name: Release
-        uses: mylovepp/micro-fe-news
+        uses: mylovepp/micro-fe-news@v0.0.1
         with:
           artifacts: 'build/outputs/**/*.bundle,build/outputs/**/*.map'
           artifactErrorsFailBuild: true
