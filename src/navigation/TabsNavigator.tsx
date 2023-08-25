@@ -1,9 +1,7 @@
 import React from 'react';
+import { Text } from "react-native";
 
 import {createMaterialBottomTabNavigator } from '@react-navigation/material-bottom-tabs';
-import AccountNavigator from './AccountNavigator';
-import SearchNavigator from './SearchNavigator';
-import HomeNavigator from './HomeNavigator';
 
 export type TabsParamList = {
   HomeNavigator: undefined;
@@ -18,7 +16,7 @@ const TabsNavigator = () => {
     <Tabs.Navigator>
       <Tabs.Screen
         name="HomeNavigator"
-        component={HomeNavigator}
+        component={()=>{return <Text>Home</Text>}}
         options={{
           title: 'Home',
           tabBarIcon: 'home-battery',
@@ -26,7 +24,7 @@ const TabsNavigator = () => {
       />
       <Tabs.Screen
         name="SearchNavigator"
-        component={SearchNavigator}
+        component={()=>{return <Text>Search</Text>}}
         options={{
           title: 'Screen',
           tabBarIcon: 'magnify',
@@ -34,7 +32,7 @@ const TabsNavigator = () => {
       />
       <Tabs.Screen
         name="AccountNavigator"
-        component={AccountNavigator}
+        component={()=>{return <Text>Account</Text>}}
         options={{
           title: 'Account',
           tabBarIcon: 'account',
