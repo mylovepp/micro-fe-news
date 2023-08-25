@@ -6,7 +6,7 @@ const SearchScreen = () => {
   const [searchQuery, setSearchQuery] = useState('');
 
   const onChangeSearch = useCallback(
-    (query: string) => setSearchQuery(query),
+    (query: string) => setSearchQuery(query || ""),
     [],
   );
 
