@@ -108,7 +108,7 @@ export default (env) => {
      */
     output: {
       clean: true,
-      hashFunction: 'xxhash64',
+      // hashFunction: 'xxhash64',
       path: path.join(dirname, 'build/generated', platform),
       filename: 'index.bundle',
       chunkFilename: '[name].chunk.bundle',
@@ -154,8 +154,7 @@ export default (env) => {
           include: [
             /node_modules(.*[/\\])+react\//,
             /node_modules(.*[/\\])+react-native/,
-            /node_modules(.*[/\\])+react-freeze/,
-            /node_modules(.*[/\\])+@react-native/,
+            // /node_modules(.*[/\\])+react-freeze/,
             /node_modules(.*[/\\])+@react-navigation/,
             /node_modules(.*[/\\])+@react-native-community/,
             /node_modules(.*[/\\])+@expo/,
@@ -268,10 +267,10 @@ export default (env) => {
           },
         },
       }),
-      // new Repack.plugins.CodeSigningPlugin({
-      //   privateKeyPath: './code-signing.pem',
-      //   outputPath: path.join('build', 'outputs', platform, 'remotes'),
-      // }),
+      new Repack.plugins.CodeSigningPlugin({
+        privateKeyPath: './code-signing.pem',
+        outputPath: path.join('build', 'outputs', platform, 'remotes'),
+      }),
     ],
   };
 };
